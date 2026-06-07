@@ -1,0 +1,212 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Release",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-o",
+        "${workspaceFolder}/output/${fileBasenameNoExtension}.exe",
+        "${file}",
+        "-std=c++17",
+        "-O2",
+        "-Wall"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Build Debug",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-o",
+        "${workspaceFolder}/debug/${fileBasenameNoExtension}.exe",
+        "${file}",
+        "-std=c++17",
+        "-g",
+        "-O0",
+        "-Wall"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false
+      }
+    },
+    {
+      "label": "Build with Sanitizer (Memory)",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-o",
+        "${workspaceFolder}/debug/${fileBasenameNoExtension}_san.exe",
+        "${file}",
+        "-std=c++17",
+        "-g",
+        "-fsanitize=address",
+        "-fsanitize=undefined",
+        "-Wall",
+        "-Wextra"
+      ],
+      "group": "build",
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "presentation": {
+        "echo": true,
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "Run Program",
+      "type": "shell",
+      "command": "${workspaceFolder}/output/${fileBasenameNoExtension}.exe",
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "dependsOn": [
+        "Build Release"
+      ]
+    },
+    {
+      "label": "Run Debug",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-Command",
+        "& '${workspaceFolder}\\debug\\${fileBasenameNoExtension}.exe'"
+      ],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "dependsOn": [
+        "Build Debug"
+      ]
+    },
+    {
+      "label": "Run with Input",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-Command",
+        "& '${workspaceFolder}\\output\\${fileBasenameNoExtension}.exe'"
+      ],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "dependsOn": [
+        "Build Release"
+      ]
+    },
+    {
+      "label": "Build & Run",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-o",
+        "${workspaceFolder}/output/${fileBasenameNoExtension}.exe",
+        "${file}",
+        "-std=c++17",
+        "-O2",
+        "-Wall"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "Run Output",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-Command",
+        "& '${workspaceFolder}\\output\\${fileBasenameNoExtension}.exe'"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "dependsOn": [
+        "Build & Run"
+      ]
+    },
+    {
+      "label": "Clean Build",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-Command",
+        "Remove-Item -Path '${workspaceFolder}/output/*' -Force -ErrorAction SilentlyContinue; Remove-Item -Path '${workspaceFolder}/debug/*' -Force -ErrorAction SilentlyContinue; Write-Host 'Clean complete!'"
+      ],
+      "presentation": {
+        "echo": true,
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "Time Complexity Analysis",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-Command",
+        "Write-Host 'Build complete. Time to analyze complexity!'"
+      ],
+      "group": "none",
+      "presentation": {
+        "echo": true,
+        "reveal": "always"
+      }
+    }
+  ]
+}

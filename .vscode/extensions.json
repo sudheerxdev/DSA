@@ -1,0 +1,24 @@
+{
+    "recommendations": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
+        "ms-vscode.cpptests",
+        "xaver.theme-onedark-pro",
+        "vscode-icons-team.vscode-icons",
+        "eamodio.gitlens",
+        "usernamehw.errorlens",
+        "aaron-bond.better-comments",
+        "Gruntfuggly.todo-tree",
+        "ms-vscode-remote.remote-wsl",
+        "sonarlint.sonarlint-vscode",
+        "vadimcn.vscode-lldb",
+        "jbenden.c-cpp-flylint",
+        "codeforces.codeforces",
+        "LeetCode.leetcode",
+        "tintinweb.graphviz-interactive-preview",
+        "jeff-hykin.better-cpp-syntax",
+        "ms-vscode.makefile-tools",
+        "waderyan.gitblame",
+        "mhutchie.git-graph"
+    ]
+}

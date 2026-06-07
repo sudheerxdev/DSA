@@ -1,0 +1,152 @@
+{
+    "DSA Template": {
+        "prefix": "dsa",
+        "body": [
+            "#include<bits/stdc++.h>",
+            "using namespace std;",
+            "",
+            "typedef long long ll;",
+            "typedef vector<int> vi;",
+            "typedef vector<ll> vll;",
+            "typedef pair<int,int> pii;",
+            "typedef pair<ll,ll> pll;",
+            "",
+            "#define pb push_back",
+            "#define mp make_pair",
+            "#define all(x) x.begin(),x.end()",
+            "#define sz(x) (int)x.size()",
+            "#define F(i,a,b) for(int i=a;i<b;i++)",
+            "#define RF(i,a,b) for(int i=a;i>=b;i--)",
+            "#define FLL(i,a,b) for(ll i=a;i<b;i++)",
+            "",
+            "const int MOD = 1e9 + 7;",
+            "const int INF = 1e9;",
+            "const ll LINF = 1e18;",
+            "",
+            "int main(){",
+            "  ios_base::sync_with_stdio(false);",
+            "  cin.tie(NULL);",
+            "  ",
+            "  $0",
+            "  ",
+            "  return 0;",
+            "}"
+        ],
+        "description": "DSA Competitive Programming Template"
+    },
+    "Fast Input Output": {
+        "prefix": "fastio",
+        "body": [
+            "ios_base::sync_with_stdio(false);",
+            "cin.tie(NULL);"
+        ],
+        "description": "Fast I/O for competitive programming"
+    },
+    "Vector Declaration": {
+        "prefix": "vec",
+        "body": "vector<${1:int}> ${2:v};"
+    },
+    "For Loop": {
+        "prefix": "for",
+        "body": "for(int ${1:i}=0; ${1:i}<${2:n}; ${1:i}++) {\n  $0\n}"
+    },
+    "While Loop": {
+        "prefix": "while",
+        "body": "while(${1:condition}) {\n  $0\n}"
+    },
+    "If Statement": {
+        "prefix": "if",
+        "body": "if(${1:condition}) {\n  $0\n}"
+    },
+    "If-Else": {
+        "prefix": "ifelse",
+        "body": "if(${1:condition}) {\n  $2\n} else {\n  $0\n}"
+    },
+    "Binary Search Template": {
+        "prefix": "binsearch",
+        "body": [
+            "int lo = 0, hi = n;",
+            "while(lo < hi) {",
+            "  int mid = lo + (hi - lo) / 2;",
+            "  if(${1:condition}) {",
+            "    hi = mid;",
+            "  } else {",
+            "    lo = mid + 1;",
+            "  }",
+            "}",
+            "// Answer is at lo"
+        ],
+        "description": "Binary Search Template"
+    },
+    "Sorting": {
+        "prefix": "sort",
+        "body": "sort(${1:arr}.begin(), ${1:arr}.end());"
+    },
+    "Debug Print": {
+        "prefix": "debug",
+        "body": [
+            "#ifndef ONLINE_JUDGE",
+            "  cerr << ${1:var} << endl;",
+            "#endif"
+        ]
+    },
+    "Modulo": {
+        "prefix": "mod",
+        "body": "(${1:x} % MOD + MOD) % MOD"
+    },
+    "Linked List Node": {
+        "prefix": "llnode",
+        "body": [
+            "struct Node {",
+            "  int data;",
+            "  Node* next;",
+            "  Node(int val) : data(val), next(nullptr) {}",
+            "};"
+        ]
+    },
+    "Tree Node": {
+        "prefix": "treenode",
+        "body": [
+            "struct TreeNode {",
+            "  int val;",
+            "  TreeNode* left;",
+            "  TreeNode* right;",
+            "  TreeNode(int v) : val(v), left(nullptr), right(nullptr) {}",
+            "};"
+        ]
+    },
+    "Graph DFS": {
+        "prefix": "dfs",
+        "body": [
+            "void dfs(int u, vector<vector<int>>& adj, vector<bool>& visited) {",
+            "  visited[u] = true;",
+            "  for(int v : adj[u]) {",
+            "    if(!visited[v]) {",
+            "      dfs(v, adj, visited);",
+            "    }",
+            "  }",
+            "}"
+        ]
+    },
+    "Graph BFS": {
+        "prefix": "bfs",
+        "body": [
+            "void bfs(int start, vector<vector<int>>& adj, int n) {",
+            "  vector<bool> visited(n, false);",
+            "  queue<int> q;",
+            "  q.push(start);",
+            "  visited[start] = true;",
+            "  while(!q.empty()) {",
+            "    int u = q.front();",
+            "    q.pop();",
+            "    for(int v : adj[u]) {",
+            "      if(!visited[v]) {",
+            "        visited[v] = true;",
+            "        q.push(v);",
+            "      }",
+            "    }",
+            "  }",
+            "}"
+        ]
+    }
+}

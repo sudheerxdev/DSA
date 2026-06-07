@@ -1,0 +1,37 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.watcherExclude": {
+            "**/node_modules": true,
+            "**/.*": true
+        },
+        "search.followSymlinks": false,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "[cpp]": {
+            "editor.defaultFormatter": "ms-vscode.cpptools"
+        },
+        "files.associations": {
+            "*.tcc": "cpp"
+        },
+        "doxdocgen.c.commentPrefix": "///",
+        "doxdocgen.cpp.commentPrefix": "///"
+    },
+    "extensions": {
+        "recommendations": [
+            "ms-vscode.cpptools",
+            "ms-vscode.cpptools-extension-pack",
+            "xaver.theme-onedark-pro",
+            "vscode-icons-team.vscode-icons",
+            "eamodio.gitlens",
+            "usernamehw.errorlens",
+            "aaron-bond.better-comments",
+            "Gruntfuggly.todo-tree",
+            "codeforces.codeforces",
+            "LeetCode.leetcode"
+        ]
+    }
+}

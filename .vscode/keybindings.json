@@ -1,0 +1,50 @@
+[
+    {
+        "key": "ctrl+alt+b",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Build Debug"
+    },
+    {
+        "key": "ctrl+alt+shift+b",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Build Release"
+    },
+    {
+        "key": "ctrl+alt+r",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Build & Run"
+    },
+    {
+        "key": "f5",
+        "command": "workbench.action.debug.start"
+    },
+    {
+        "key": "shift+f5",
+        "command": "workbench.action.debug.stop"
+    },
+    {
+        "key": "f9",
+        "command": "editor.debug.action.toggleBreakpoint"
+    },
+    {
+        "key": "f10",
+        "command": "workbench.action.debug.stepOver"
+    },
+    {
+        "key": "f11",
+        "command": "workbench.action.debug.stepInto"
+    },
+    {
+        "key": "shift+f11",
+        "command": "workbench.action.debug.stepOut"
+    },
+    {
+        "key": "ctrl+k ctrl+c",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Clean Build"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "workbench.view.debug"
+    }
+]
